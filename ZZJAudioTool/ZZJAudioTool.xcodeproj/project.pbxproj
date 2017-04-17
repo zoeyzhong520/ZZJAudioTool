@@ -15,6 +15,11 @@
 		0456DF3C1EA4ACF10099E9B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0456DF3A1EA4ACF10099E9B4 /* LaunchScreen.storyboard */; };
 		0456DF471EA4ACF10099E9B4 /* ZZJAudioToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456DF461EA4ACF10099E9B4 /* ZZJAudioToolTests.m */; };
 		0456DF521EA4ACF10099E9B4 /* ZZJAudioToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456DF511EA4ACF10099E9B4 /* ZZJAudioToolUITests.m */; };
+		0456DF621EA4AD7B0099E9B4 /* AudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0456DF611EA4AD7B0099E9B4 /* AudioTool.m */; };
+		0456DF681EA4B32A0099E9B4 /* G.E.M.邓紫棋 - 喜欢你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456DF641EA4B32A0099E9B4 /* G.E.M.邓紫棋 - 喜欢你.mp3 */; };
+		0456DF691EA4B32A0099E9B4 /* Maroon 5 - One More Night - LVLF Remix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456DF651EA4B32A0099E9B4 /* Maroon 5 - One More Night - LVLF Remix.mp3 */; };
+		0456DF6A1EA4B32A0099E9B4 /* Rameez - La La La.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456DF661EA4B32A0099E9B4 /* Rameez - La La La.mp3 */; };
+		0456DF6B1EA4B32A0099E9B4 /* 李健,孙俪 - 风吹麦浪.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456DF671EA4B32A0099E9B4 /* 李健,孙俪 - 风吹麦浪.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,12 @@
 		0456DF4D1EA4ACF10099E9B4 /* ZZJAudioToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZJAudioToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0456DF511EA4ACF10099E9B4 /* ZZJAudioToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZJAudioToolUITests.m; sourceTree = "<group>"; };
 		0456DF531EA4ACF10099E9B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0456DF601EA4AD7B0099E9B4 /* AudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioTool.h; sourceTree = "<group>"; };
+		0456DF611EA4AD7B0099E9B4 /* AudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioTool.m; sourceTree = "<group>"; };
+		0456DF641EA4B32A0099E9B4 /* G.E.M.邓紫棋 - 喜欢你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G.E.M.邓紫棋 - 喜欢你.mp3"; sourceTree = "<group>"; };
+		0456DF651EA4B32A0099E9B4 /* Maroon 5 - One More Night - LVLF Remix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Maroon 5 - One More Night - LVLF Remix.mp3"; sourceTree = "<group>"; };
+		0456DF661EA4B32A0099E9B4 /* Rameez - La La La.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rameez - La La La.mp3"; sourceTree = "<group>"; };
+		0456DF671EA4B32A0099E9B4 /* 李健,孙俪 - 风吹麦浪.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "李健,孙俪 - 风吹麦浪.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +112,8 @@
 		0456DF2B1EA4ACF10099E9B4 /* ZZJAudioTool */ = {
 			isa = PBXGroup;
 			children = (
+				0456DF631EA4B32A0099E9B4 /* mp3 */,
+				0456DF5F1EA4AD7B0099E9B4 /* AudioTool */,
 				0456DF2F1EA4ACF10099E9B4 /* AppDelegate.h */,
 				0456DF301EA4ACF10099E9B4 /* AppDelegate.m */,
 				0456DF321EA4ACF10099E9B4 /* ViewController.h */,
@@ -138,6 +151,26 @@
 				0456DF531EA4ACF10099E9B4 /* Info.plist */,
 			);
 			path = ZZJAudioToolUITests;
+			sourceTree = "<group>";
+		};
+		0456DF5F1EA4AD7B0099E9B4 /* AudioTool */ = {
+			isa = PBXGroup;
+			children = (
+				0456DF601EA4AD7B0099E9B4 /* AudioTool.h */,
+				0456DF611EA4AD7B0099E9B4 /* AudioTool.m */,
+			);
+			path = AudioTool;
+			sourceTree = "<group>";
+		};
+		0456DF631EA4B32A0099E9B4 /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				0456DF641EA4B32A0099E9B4 /* G.E.M.邓紫棋 - 喜欢你.mp3 */,
+				0456DF651EA4B32A0099E9B4 /* Maroon 5 - One More Night - LVLF Remix.mp3 */,
+				0456DF661EA4B32A0099E9B4 /* Rameez - La La La.mp3 */,
+				0456DF671EA4B32A0099E9B4 /* 李健,孙俪 - 风吹麦浪.mp3 */,
+			);
+			path = mp3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +279,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0456DF691EA4B32A0099E9B4 /* Maroon 5 - One More Night - LVLF Remix.mp3 in Resources */,
+				0456DF681EA4B32A0099E9B4 /* G.E.M.邓紫棋 - 喜欢你.mp3 in Resources */,
+				0456DF6B1EA4B32A0099E9B4 /* 李健,孙俪 - 风吹麦浪.mp3 in Resources */,
 				0456DF3C1EA4ACF10099E9B4 /* LaunchScreen.storyboard in Resources */,
 				0456DF391EA4ACF10099E9B4 /* Assets.xcassets in Resources */,
 				0456DF371EA4ACF10099E9B4 /* Main.storyboard in Resources */,
+				0456DF6A1EA4B32A0099E9B4 /* Rameez - La La La.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +312,7 @@
 			files = (
 				0456DF341EA4ACF10099E9B4 /* ViewController.m in Sources */,
 				0456DF311EA4ACF10099E9B4 /* AppDelegate.m in Sources */,
+				0456DF621EA4AD7B0099E9B4 /* AudioTool.m in Sources */,
 				0456DF2E1EA4ACF10099E9B4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@
 @interface AudioTool : NSObject
 
 //存放音频的数组
-@property (nonatomic,strong)NSArray *voiceArray;
+@property (nonatomic,strong)NSMutableArray *voiceArray;
 
 /*
  单例创建
@@ -36,5 +36,17 @@
 - (void)stopMusic:(NSString *)fileName;
 
 - (void)printVoiceArray;
+
+#pragma mark -- 播放、暂停、停止方法的二次封装
+//遍历voiceArray数组，找出符合条件的音频URL并播放
+- (void)playMatchVoice:(NSInteger)index;
+
+- (void)playMatchVoice;
+
+//暂停播放
+- (void)pauseMatchVoice;
+
+//停止
+- (void)stopMatchVoice;
 
 @end

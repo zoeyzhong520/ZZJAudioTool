@@ -10,7 +10,9 @@
 
 @interface AudioTool ()<AVAudioPlayerDelegate>
 
-@property (nonatomic)NSInteger currentIndex;
+@property (nonatomic,copy) NSString *url;//音频文件的URL
+
+@property (nonatomic)NSInteger index;//播放音频的索引
 
 @end
 
@@ -119,16 +121,87 @@ static NSMutableDictionary *musices;
     NSLog(@"传入的voiceArray： %@",_voiceArray);
 }
 
+#pragma mark -- 对播放、暂停、停止方法的二次封装
+//遍历voiceArray数组，找出符合条件的音频URL并播放
+- (void)playMatchVoice:(NSInteger)index {
+    
+    if (_voiceArray.count > 0) {
+        
+        for (NSDictionary *dic in _voiceArray) {
+            
+            NSInteger IndexAtTool = [dic[@"index"] integerValue];
+            NSString *url = dic[@"voice_url"];
+            
+            if (IndexAtTool == index) {
+                NSLog(@"传入的index和AudioTool里的index相匹配");
+                [self playMusic:url];
+                _url = url;
+                break;
+            }else{
+                NSLog(@"没有符合条件的音频！");
+                break;
+            }
+        }
+    }
+    
+}
+
+- (void)playMatchVoice {
+    
+    if (_voiceArray.count > 0) {
+        
+        for (int i=0;i<_voiceArray.count;i++) {
+            //默认播放第一个音频（需提前对音频数组按照index的值，进行由小到大的排序）
+            NSString *url = _voiceArray[0][@"voice_url"];
+            _url = url;
+            
+            //播放音频
+            [self playMusic:url];
+            
+            //初始化index的数值为0
+            _index = 0;
+        }
+    }
+}
+
+//暂停播放
+- (void)pauseMatchVoice {
+    [self pauseMusic:_url];
+}
+
+//停止
+- (void)stopMatchVoice {
+    [self stopMusic:_url];
+}
+
+//播放下一个音频
+- (void)playNextMatchVoice {
+    
+    //先停止播放
+    [self stopMatchVoice];
+    
+    //播放索引+1
+    _index++;
+    if (_index >= _voiceArray.count) {
+        _index = 0;
+        NSLog(@"音频文件已经全部播放完！");
+    }
+    
+    //开始播放
+    [self playMusic:_voiceArray[_index][@"voice_url"]];
+}
+
 #pragma mark -- AVAudioPlayerDelegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     
     NSLog(@"音乐播放完成！");
     
-    NSDictionary *dic = [NSDictionary dictionary];
+    //音频播放完成之后，自动播放下一个
+    [self playNextMatchVoice];
+    
+    NSDictionary *dic = @{@"index":[NSString stringWithFormat:@"%@",_voiceArray[_index][@"index"]]};
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AudioToolDidFinishedPlaying" object:nil userInfo:dic];
-    
-    
 }
 
 @end
